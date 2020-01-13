@@ -1,0 +1,78 @@
+@import "../../../scss/variables.scss";
+
+#searchInput {
+  border: $white-color 2px solid;
+  color: $black-color;
+  margin: 20px 10px 10px 0px;
+  @include padding_border-radius(5px, 5px);
+}
+#pagesSelect {
+  width: 14%;
+  float: right;
+  margin: 10px 0px 20px auto;
+}
+
+#pagesSelect p {
+  font-weight: 700;
+  position: relative;
+  left: -100%;
+  top: 55%;
+  @include font-size_color(20px, $white-color);
+}
+
+pagination-controls::ng-deep li {
+  background-color: $white-color;
+  border-radius: $border_radius;
+  font-size: 20px;
+  font-weight: bold;
+  margin: 5px;
+}
+
+pagination-controls::ng-deep a:hover {
+  background-color: #444547 !important;
+  color: $white-color;
+  border-radius: $border_radius;
+}
+
+pagination-controls::ng-deep .pagination-next,
+pagination-controls::ng-deep .pagination-previous {
+  width: 130px;
+  text-align: center;
+}
+
+table {
+  min-height: 400px;
+  text-align: center;
+  border-radius: 25px;
+}
+
+.table th {
+  border-top: none;
+  border-bottom: none;
+}
+
+tbody td {
+  font-size: 18px;
+  font-weight: lighter;
+  padding: 10px;
+}
+
+thead th {
+  font-size: 20px;
+}
+
+#readMore {
+  border-radius: $border_radius;
+  width: max-content;
+  border: 1px solid $star_wars_color;
+  background-color: $black-color;
+  color: $star_wars_color;
+}
+#readMore:hover,
+#readMore:focus,
+#readMore:active {
+  @include noDefaultBorder;
+}
+#spinner {
+  @include spinner;
+}

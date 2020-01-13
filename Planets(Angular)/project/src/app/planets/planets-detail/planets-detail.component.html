@@ -1,0 +1,74 @@
+<div *ngIf="isLoading" id="spinner">
+  <app-loading-spinner></app-loading-spinner>
+</div>
+<button id="back_button" routerLink="/planets">Back</button>
+
+<div *ngIf="!isLoading">
+
+  <div *ngIf="planet" id="planet_details">
+    <div id="planet_image">
+      <img
+        src="https://www.itl.cat/pngfile/big/14-147557_purple-space-wallpaper-1920x1080-pictures-5-hd-wallpapers.jpg">
+      <p>{{planet.name}}</p>
+    </div>
+
+    <div id="planet_info">
+      <div class="column">
+
+        <div>
+          <h4 class="heading">Rotation period: </h4>
+          <h4>{{planet.rotation_period+' hours' }}</h4>
+        </div>
+        <div>
+          <h4 class="heading">Orbital period: </h4>
+          <h4> {{planet.orbital_period  + ' days'}} </h4>
+        </div>
+        <div>
+          <h4 class="heading">Diameter: </h4>
+          <h4>{{planet.diameter + ' km' }}</h4>
+        </div>
+      </div>
+
+      <div class="column">
+        <div>
+          <h4 class="heading">Climate: </h4>
+          <h4>{{planet.climate}}</h4>
+        </div>
+        <div>
+          <h4 class="heading">Gravity: </h4>
+          <h4>{{planet.gravity}}</h4>
+        </div>
+        <div>
+          <h4 class="heading">Terrain: </h4>
+          <h4>{{planet.terrain}}</h4>
+        </div>
+      </div>
+
+      <div class="column">
+        <div>
+          <h4 class="heading">Surface water: </h4>
+          <h4>{{planet.surface_water}}</h4>
+        </div>
+        <div>
+          <h4 class="heading">Population: </h4>
+          <h4>{{planet.population}}</h4>
+        </div>
+      </div>
+    </div>
+    <div class="column-2">
+      <h4 id="residents">Residents:</h4>
+      <h5 *ngIf="!(residents?.length>0)">No residents</h5>
+      <ol>
+        <li *ngFor="let r of residents"> {{r}}</li>
+      </ol>
+    </div>
+
+    <div class="column-2">
+      <h4 id="films">Films:</h4>
+      <h5 *ngIf="!(films?.length>0)">No films</h5>
+      <ol>
+        <li *ngFor="let f of films">{{f}}</li>
+      </ol>
+    </div>
+  </div>
+</div>

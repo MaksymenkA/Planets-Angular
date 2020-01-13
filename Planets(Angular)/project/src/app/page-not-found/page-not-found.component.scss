@@ -1,0 +1,14 @@
+@import "../../../src/scss/variables.scss";
+h6 {
+  @include text-align_margin-top(center, 25%);
+  @include font-size_color(60px, $white-color);
+}
+
+#back_button_area {
+  @include text-align_margin-top(center, 20px);
+}
+#back_button {
+  @include padding_border-radius(10px, 10px);
+  font-size: 15px;
+  background-color: cornflowerblue;
+}

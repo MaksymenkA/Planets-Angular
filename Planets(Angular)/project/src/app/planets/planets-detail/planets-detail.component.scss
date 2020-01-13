@@ -1,0 +1,88 @@
+@import "../../../scss/variables.scss";
+
+#back_button:active,
+#back_button:focus,
+#back_button:hover {
+  @include noDefaultBorder;
+}
+#planet_details {
+  margin-bottom: 20px;
+  @include padding_border-radius(20px, 25px);
+}
+#spinner {
+  @include spinner;
+}
+#back_button {
+  width: 100px;
+  margin: 20px 0px;
+  @include font-size_color(20px, $star_wars_color);
+  @include border_border-radius_background-color(
+    1px solid $star_wars_color,
+    $border-radius,
+    $black-color
+  );
+}
+.column-2 {
+  width: 45%;
+  float: left;
+  color: $white-color;
+  margin: 25px;
+  @include border_border-radius_background-color(
+    1px solid $star_wars_color,
+    25px,
+    $black-color
+  );
+}
+img {
+  width: 600px;
+  height: 300px;
+}
+#planet_image {
+  @include font-size_color(50px, $white-color);
+  text-align: center;
+}
+
+#planet_info {
+  font-weight: 500;
+  min-height: 180px;
+  max-height: 300px;
+  padding: inherit;
+  @include border_border-radius_background-color(
+    1px solid $star_wars_color,
+    25px,
+    $black-color
+  );
+  @include font-size_color(16px, $white-color);
+}
+
+li {
+  font-size: 1.25rem;
+  line-height: 1.5;
+}
+
+h5 {
+  text-align: center;
+}
+
+.heading {
+  color: $star_wars_color;
+  padding-right: 5px;
+  float: left;
+}
+.column {
+  float: left;
+  width: 33.33%;
+  padding: 10px;
+}
+
+#residents,
+#films {
+  color: $star_wars_color;
+  text-align: center;
+}
+
+ol {
+  width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+}

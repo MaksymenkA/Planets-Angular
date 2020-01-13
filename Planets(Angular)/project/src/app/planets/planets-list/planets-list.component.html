@@ -1,0 +1,43 @@
+<div *ngIf="isLoading" id="spinner">
+  <app-loading-spinner></app-loading-spinner>
+</div>
+<div class="row" *ngIf="!isLoading">
+  <div>
+    <input id="searchInput" [(ngModel)]="filterByName" (keyup)="onChangeSelected($event.target.value)"
+      placeholder="Search by planet name" />
+  </div>
+  <div id="pagesSelect">
+    <p>Items per page </p>
+    <select class="browser-default custom-select" class="form-control" [(ngModel)]="itemsNumber"
+      (change)="onChangeSelected($event.target.value)">
+      <option *ngFor="let n of itemsPerPage" [ngValue]="n" p="1"> {{n}}</option>
+    </select>
+  </div>
+  <table class="table table-striped table-dark">
+    <thead>
+      <tr>
+        <th scope="col">Planet</th>
+        <th scope="col">Rotation period</th>
+        <th scope="col">Orbital period</th>
+        <th scope="col">Diameter</th>
+        <th scope="col">Climate</th>
+        <th scope="col">Terrain</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr
+        *ngFor="let pl of planets| searchByPlanetsName: filterByName | paginate: {itemsPerPage:itemsNumber, currentPage:p}">
+        <td>{{ pl.name }} </td>
+        <td>{{ pl.rotation_period +' hours' }}</td>
+        <td>{{ pl.orbital_period + ' days' }}</td>
+        <td>{{ pl.diameter  + ' km' }}</td>
+        <td>{{ pl.climate}}</td>
+        <td>{{ pl.terrain}}</td>
+        <td><button [routerLink]="['/details',getPlanetId(pl.url)]" id="readMore">Read more</button> </td>
+      </tr>
+    </tbody>
+  </table>
+  <div class="mr-auto ml-auto">
+    <pagination-controls (pageChange)="p=$event"></pagination-controls>
+  </div>
+</div>

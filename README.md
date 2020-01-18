@@ -7,7 +7,7 @@
     1. Routing
     2. Pagination
     3. External API (swapi.co)
-    4. Search by planets name
+    4. Search by planets name using custom pipe
     5. Displaying of the detailed information about planet choosen in the table list
     6. Combobox which changes the number of displayed planets per page
     7. Loading spinner, as the data is taken from the api so it takes time for loading, then spinner will be displayed 

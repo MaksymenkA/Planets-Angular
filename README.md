@@ -12,4 +12,6 @@
     6. Combobox which changes the number of displayed planets per page
     7. Loading spinner, as the data is taken from the api so it takes time for loading, then spinner will be displayed 
     8. Angular deployment
+    9. Sass
+    10. Bootstrap
    
